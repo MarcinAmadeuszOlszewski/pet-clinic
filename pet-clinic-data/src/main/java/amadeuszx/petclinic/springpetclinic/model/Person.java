@@ -8,7 +8,7 @@ public class Person  extends BaseEntity{
     return firstName;
   }
 
-  private void setFirstName(final String firstName) {
+  public void setFirstName(final String firstName) {
     this.firstName = firstName;
   }
 
@@ -16,7 +16,7 @@ public class Person  extends BaseEntity{
     return lastName;
   }
 
-  private void setLastName(final String lastName) {
+  public void setLastName(final String lastName) {
     this.lastName = lastName;
   }
 }
