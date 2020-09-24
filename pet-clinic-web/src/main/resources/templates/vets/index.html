@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
   <meta charset="UTF-8">
   <title>List of Vets</title>
 </head>
 <body>
-  <h1 th:text="'List of Vets'">List of Vets</h1>
+<h1 th:text="'List of Vets'">List of Vets</h1>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>FirstName</th>
-      <th>LastName</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="vet : ${vets}">
-      <td th:text="${vet.id}">id</td>
-      <td th:text="${vet.firstName}">firstName</td>
-      <td th:text="${vet.lastName}">lastName</td>
-    </tr>
-    </tbody>
-  </table>
+<table id="vets" class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 100px;">Id</th>
+    <th style="width: 200px;">FirstName</th>
+    <th style="width: 200px;">LastName</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="vet : ${vets}">
+    <td th:text="${vet.id}">id</td>
+    <td th:text="${vet.firstName}">firstName</td>
+    <td th:text="${vet.lastName}">lastName</td>
+  </tr>
+  </tbody>
+</table>
 </body>
 </html>
