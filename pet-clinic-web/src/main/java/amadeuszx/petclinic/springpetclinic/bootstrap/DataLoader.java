@@ -43,16 +43,16 @@ public class DataLoader implements CommandLineRunner {
     owner1.setCity("Jonatowice");
     owner1.setTelephone("666-555-444");
 
-    Pet pet11=new Pet();
+    Pet pet11 = new Pet();
     pet11.setPetType(savedDog);
     pet11.setOwner(owner1);
-    pet11.setBirthDate(LocalDate.of(2019,1,1));
+    pet11.setBirthDate(LocalDate.of(2019, 1, 1));
     pet11.setName("Jacus");
     owner1.getPets().add(pet11);
-    Pet pet12=new Pet();
+    Pet pet12 = new Pet();
     pet12.setPetType(savedDog);
     pet12.setOwner(owner1);
-    pet12.setBirthDate(LocalDate.of(2019,2,2));
+    pet12.setBirthDate(LocalDate.of(2019, 2, 2));
     pet12.setName("Jacusia");
     owner1.getPets().add(pet12);
 
@@ -65,10 +65,10 @@ public class DataLoader implements CommandLineRunner {
     owner2.setCity("Jonatowice");
     owner2.setTelephone("666-555-333");
 
-    Pet pet21=new Pet();
+    Pet pet21 = new Pet();
     pet21.setPetType(savedCat);
     pet21.setOwner(owner2);
-    pet21.setBirthDate(LocalDate.of(2018,8,8));
+    pet21.setBirthDate(LocalDate.of(2018, 8, 8));
     pet21.setName("Mruczka");
     owner2.getPets().add(pet21);
 
