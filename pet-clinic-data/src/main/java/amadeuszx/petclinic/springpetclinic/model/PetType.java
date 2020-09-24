@@ -3,11 +3,11 @@ package amadeuszx.petclinic.springpetclinic.model;
 public class PetType extends BaseEntity{
 private String name;
 
-  private String getName() {
+  public String getName() {
     return name;
   }
 
-  private void setName(final String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 }
