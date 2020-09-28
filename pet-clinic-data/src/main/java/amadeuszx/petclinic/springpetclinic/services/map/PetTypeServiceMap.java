@@ -3,9 +3,11 @@ package amadeuszx.petclinic.springpetclinic.services.map;
 import amadeuszx.petclinic.springpetclinic.model.PetType;
 import amadeuszx.petclinic.springpetclinic.services.PetTypeService;
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("HashMapVesion")
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
   @Override

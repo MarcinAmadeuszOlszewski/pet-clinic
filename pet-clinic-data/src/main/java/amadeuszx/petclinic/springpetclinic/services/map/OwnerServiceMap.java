@@ -5,9 +5,11 @@ import amadeuszx.petclinic.springpetclinic.services.OwnerService;
 import amadeuszx.petclinic.springpetclinic.services.PetService;
 import amadeuszx.petclinic.springpetclinic.services.PetTypeService;
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("HashMapVesion")
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
   private final PetTypeService petTypeService;

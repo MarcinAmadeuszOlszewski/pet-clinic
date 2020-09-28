@@ -5,6 +5,7 @@ import amadeuszx.petclinic.springpetclinic.model.Pet;
 import amadeuszx.petclinic.springpetclinic.model.PetType;
 import amadeuszx.petclinic.springpetclinic.model.Speciality;
 import amadeuszx.petclinic.springpetclinic.model.Vet;
+import amadeuszx.petclinic.springpetclinic.repositories.PetTypeRepository;
 import amadeuszx.petclinic.springpetclinic.services.OwnerService;
 import amadeuszx.petclinic.springpetclinic.services.PetTypeService;
 import amadeuszx.petclinic.springpetclinic.services.SpecialtiesService;
@@ -82,7 +83,6 @@ public class DataLoader implements CommandLineRunner {
     pet21.setBirthDate(LocalDate.of(2018, 8, 8));
     pet21.setName("Mruczka");
     owner2.getPets().add(pet21);
-
     ownerService.save(owner2);
 
     System.out.println("Owners loaded");
