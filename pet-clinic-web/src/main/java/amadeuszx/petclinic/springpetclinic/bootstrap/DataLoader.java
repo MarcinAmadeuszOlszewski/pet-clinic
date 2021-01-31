@@ -5,10 +5,9 @@ import amadeuszx.petclinic.springpetclinic.model.Pet;
 import amadeuszx.petclinic.springpetclinic.model.PetType;
 import amadeuszx.petclinic.springpetclinic.model.Speciality;
 import amadeuszx.petclinic.springpetclinic.model.Vet;
-import amadeuszx.petclinic.springpetclinic.repositories.PetTypeRepository;
 import amadeuszx.petclinic.springpetclinic.services.OwnerService;
 import amadeuszx.petclinic.springpetclinic.services.PetTypeService;
-import amadeuszx.petclinic.springpetclinic.services.SpecialtiesService;
+import amadeuszx.petclinic.springpetclinic.services.SpecialityService;
 import amadeuszx.petclinic.springpetclinic.services.VetService;
 import java.time.LocalDate;
 import org.springframework.boot.CommandLineRunner;
@@ -20,15 +19,15 @@ public class DataLoader implements CommandLineRunner {
   private final OwnerService ownerService;
   private final VetService vetService;
   private final PetTypeService petTypeService;
-  private final SpecialtiesService specialtiesService;
+  private final SpecialityService specialityService;
 
   public DataLoader(final OwnerService ownerService, final VetService vetService,
       final PetTypeService petTypeService,
-      final SpecialtiesService specialtiesService) {
+      final SpecialityService specialityService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
-    this.specialtiesService = specialtiesService;
+    this.specialityService = specialityService;
   }
 
   @Override
@@ -89,13 +88,13 @@ public class DataLoader implements CommandLineRunner {
 
     Speciality radiology = new Speciality();
     radiology.setDescription("radiologia");
-    final Speciality saveRadiology = specialtiesService.save(radiology);
+    final Speciality saveRadiology = specialityService.save(radiology);
     Speciality surgery = new Speciality();
     surgery.setDescription("chirurgia");
-    final Speciality saveSurgery = specialtiesService.save(surgery);
+    final Speciality saveSurgery = specialityService.save(surgery);
     Speciality dentistry = new Speciality();
     dentistry.setDescription("stomatologia");
-    final Speciality saveDentistry = specialtiesService.save(dentistry);
+    final Speciality saveDentistry = specialityService.save(dentistry);
 
     Vet vet1 = new Vet();
     vet1.setFirstName("Marian");
