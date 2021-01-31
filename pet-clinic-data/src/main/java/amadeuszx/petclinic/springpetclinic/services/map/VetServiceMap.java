@@ -3,11 +3,13 @@ package amadeuszx.petclinic.springpetclinic.services.map;
 import amadeuszx.petclinic.springpetclinic.model.Vet;
 import amadeuszx.petclinic.springpetclinic.services.SpecialityService;
 import amadeuszx.petclinic.springpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("HashMapVesion")
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 private final SpecialityService specialityService;
 
