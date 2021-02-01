@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("HashMapVesion")
+@Profile({"default", "map"})
 public class SpecialtityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
   @Override
