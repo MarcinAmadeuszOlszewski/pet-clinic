@@ -1,5 +1,7 @@
 package amadeuszx.petclinic.springpetclinic.model;
 
+import lombok.*;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
@@ -9,7 +11,10 @@ import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "vetd")
 public class Vet extends Person {
@@ -19,11 +24,4 @@ public class Vet extends Person {
       joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "specialties_id"))
   private Set<Speciality> specialities = new HashSet<>();
 
-  public Set<Speciality> getSpecialities() {
-    return specialities;
-  }
-
-  public void setSpecialities(final Set<Speciality> specialities) {
-    this.specialities = specialities;
-  }
 }
