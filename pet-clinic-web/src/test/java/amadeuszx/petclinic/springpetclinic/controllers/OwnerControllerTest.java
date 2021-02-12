@@ -1,6 +1,10 @@
 package amadeuszx.petclinic.springpetclinic.controllers;
 
+import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.isNotNull;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -63,5 +67,25 @@ class OwnerControllerTest {
         .andExpect(status().isOk())
         .andExpect(view().name("notImplemented"));
     verifyNoInteractions(ownerService);
+  }
+
+  @Test
+  void listOwnersByIndex() throws Exception {
+    when(ownerService.findAll()).thenReturn(owners);
+    mockMvc.perform(get("/owners/index"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("owners/index"))
+        .andExpect(model().attribute("owners",hasSize(2)));
+  }
+
+  @Test
+  void displayOwner() throws Exception {
+    Owner o = Owner.builder().build();
+        o.setId(1L);
+    when(ownerService.findById(anyLong())).thenReturn(o);
+    mockMvc.perform(get("/owners/123"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("owners/ownerDetails"))
+        .andExpect(model().attribute("owner",hasProperty("id",is(1L))));
   }
 }
