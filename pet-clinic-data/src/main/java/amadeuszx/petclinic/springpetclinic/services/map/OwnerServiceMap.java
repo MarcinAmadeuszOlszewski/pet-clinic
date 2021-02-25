@@ -4,6 +4,7 @@ import amadeuszx.petclinic.springpetclinic.model.Owner;
 import amadeuszx.petclinic.springpetclinic.services.OwnerService;
 import amadeuszx.petclinic.springpetclinic.services.PetService;
 import amadeuszx.petclinic.springpetclinic.services.PetTypeService;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.context.annotation.Profile;
@@ -69,5 +70,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
   public Owner findByLastName(final String lastName) {
     final Optional<Owner> first = findAll().stream().filter(n -> n.getLastName().equalsIgnoreCase(lastName)).findFirst();
     return first.orElse(null);
+  }
+
+  @Override
+  public List<Owner> findAllByLastNameLike(final String lastName) {
+    return null;
   }
 }

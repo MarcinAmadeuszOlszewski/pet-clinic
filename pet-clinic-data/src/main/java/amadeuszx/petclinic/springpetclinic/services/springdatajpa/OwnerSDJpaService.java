@@ -4,6 +4,7 @@ import amadeuszx.petclinic.springpetclinic.model.Owner;
 import amadeuszx.petclinic.springpetclinic.repositories.OwnerRepository;
 import amadeuszx.petclinic.springpetclinic.services.OwnerService;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class OwnerSDJpaService implements OwnerService {
   @Override
   public Owner findByLastName(final String lastName) {
     return ownerRepository.findByLastName(lastName);
+  }
+
+  @Override
+  public List<Owner> findAllByLastNameLike(final String lastName) {
+    return ownerRepository.findByLastNameLike(lastName);
   }
 
   @Override
